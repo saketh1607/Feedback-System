@@ -575,4 +575,220 @@
       justify-content: center;
     }
   }
+  /* Add to AdminPanel.css */
+.fixed {
+    position: fixed !important;
+  }
   
+  .z-\[9999\] {
+    z-index: 9999 !important;
+  }
+  
+  .relative {
+    position: relative !important;
+  }
+  
+  .z-\[10000\] {
+    z-index: 10000 !important;
+  }
+  
+  /* Ensure no parent has overflow-hidden */
+  .admin-container {
+    overflow: visible !important;
+  }
+  
+  .feedback-carousel {
+    overflow: visible !important;
+  }
+  .reply-button {
+    position: relative;
+    transition: all 0.2s ease;
+    z-index: 2;
+  }
+  
+  .reply-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+  }
+  /* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  /* Reply Button Styling */
+  .reply-button {
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .reply-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reply-button:active {
+    transform: translateY(0);
+  }
+  
+  /* Z-index Fixes */
+  .feedback-carousel {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .modal-overlay {
+    z-index: 1000;
+  }
+  .email-composer {
+    position: relative;
+    margin-top: 1rem;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    padding: 1.5rem;
+    transform-origin: top;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    border: 2px solid var(--primary-light);
+    margin-bottom: 1.5rem;
+  }
+  
+  .email-composer.active {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1.5rem;
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Email Composition Styles */
+.email-composition {
+    position: relative;
+    margin: 1rem 0;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    padding: 1.5rem;
+    border: 2px solid var(--primary-light);
+    display: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .email-composition.active {
+    display: block;
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .composition-header {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .composition-header h3 {
+    color: var(--text-primary);
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .email-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 0.75rem;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    transition: var(--transition-base);
+  }
+  
+  .email-body {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .composition-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--border-color);
+  }
+  
+  .send-button {
+    background: linear-gradient(to right, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .cancel-button {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 2px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .send-button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .cancel-button:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+  }
+  
+  /* Reply Button Active State */
+  .reply-button.active {
+    background: var(--primary-dark);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
