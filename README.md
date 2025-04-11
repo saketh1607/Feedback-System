@@ -95,6 +95,7 @@ emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', '#email-form', 'USER_ID')
 - React
 - EmailJS (for email delivery)
 - Chart.js (for analytics dashboard)
+- -rechart.js
 
 ### Backend
 - Firebase Firestore (Realtime database)
